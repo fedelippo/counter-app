@@ -30,12 +30,25 @@ class App extends Component {
     this.setState({ counters: counters });
   };
 
+  handleReset = () => {
+    console.log("Handle reset clicked!")
+    const counters = [
+      { id: 1, value: 4 },
+      { id: 2, value: 0 },
+      { id: 3, value: 0 },
+      { id: 4, value: 0 },
+    ]
+
+    this.setState({counters}); 
+  };
+
   render() { 
     return <React.Fragment>
     <NavBar/>
     <main className="container">
       <Counters
       counters={this.state.counters}
+      onReset = {this.handleReset}
       onDelete={this.handleDelete}
       onIncrement={this.handleIncrement}
       />
