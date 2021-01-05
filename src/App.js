@@ -42,6 +42,10 @@ class App extends Component {
     this.setState({counters}); 
   };
 
+  handleDecrement = () => {
+    console.log("Decremnt is called");
+  }
+
   render() { 
     return <React.Fragment>
     <NavBar/>
@@ -51,6 +55,7 @@ class App extends Component {
       onReset = {this.handleReset}
       onDelete={this.handleDelete}
       onIncrement={this.handleIncrement}
+      onDecrement={this.handleDecrement}
       />
     </main>
   </React.Fragment>;
