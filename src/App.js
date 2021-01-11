@@ -42,8 +42,13 @@ class App extends Component {
     this.setState({counters}); 
   };
 
-  handleDecrement = () => {
+  handleDecrement = (counter) => {
     console.log("Decremnt is called");
+    const counters = [...this.state.counters];
+    const index = this.state.counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value--;
+    this.setState({ counters });
   }
 
   render() { 
